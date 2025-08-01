@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, Shield, CheckCircle, Mail, Star } from 'lucide-react';
+import { Search, Mail } from 'lucide-react';
 
 export function Header() {
   return (
@@ -24,17 +24,10 @@ export function Header() {
 
           {/* Trust Indicators & Contact */}
           <div className="flex items-center space-x-4 md:space-x-8">
-            {/* Trust Badge */}
-            <div className="hidden md:flex items-center space-x-2 text-sm text-gray-600">
-              <Star className="w-4 h-4 text-yellow-500 fill-current" />
-              <span className="font-medium">500+ Anbieter</span>
-            </div>
-
-            {/* Quality Badge */}
-            <div className="hidden lg:flex items-center space-x-2 text-sm text-gray-600">
-              <CheckCircle className="w-4 h-4 text-green-500" />
-              <span>Geprüfte Experten</span>
-            </div>
+            {/* CTA Button */}
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+              Angebote erhalten
+            </button>
 
             {/* Contact Info */}
             <div className="flex items-center space-x-4">
@@ -46,47 +39,6 @@ export function Header() {
                 <span className="hidden md:inline">Kontakt</span>
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Value Proposition Subheader */}
-        <div className="pb-6 border-t border-gray-100 pt-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-3">
-              Finden Sie den passenden Datenschutz-Experten für Ihr Unternehmen
-            </h2>
-            <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-600">
-              <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4 text-indigo-600" />
-                <span>DSGVO-konform</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>Kostenloser Vergleich</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                <span>Unabhängig & neutral</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Quick Navigation Pills */}
-        <div className="pb-4">
-          <div className="flex flex-wrap justify-center gap-3">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-              Externe DSB
-            </span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-              DSGVO-Beratung
-            </span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-              Datenschutz-Audit
-            </span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
-              Schulungen
-            </span>
           </div>
         </div>
       </div>

@@ -26,17 +26,6 @@ export function MultiStepForm({ children }: MultiStepFormProps) {
   return (
     <div className="w-full">
       <div className="w-full max-w-4xl mx-auto">
-        {/* Header Section - Mobile-optimized */}
-        <div className="text-center mb-6 sm:mb-8 lg:mb-10 px-4 sm:px-0">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">
-            Kostenlose DSGVO-Beratung
-          </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Erhalten Sie eine unverbindliche Erstberatung für Ihr Unternehmen. 
-            Unsere Experten helfen Ihnen bei der DSGVO-Compliance.
-          </p>
-        </div>
-
         {/* Main form container - Enhanced responsive design */}
         <div className="bg-white rounded-lg sm:rounded-xl shadow-lg sm:shadow-xl overflow-hidden border border-gray-200">
           {/* Progress bar - Mobile-optimized */}
