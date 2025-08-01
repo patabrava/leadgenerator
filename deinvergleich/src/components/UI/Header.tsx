@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, Mail } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 export function Header() {
   return (
@@ -22,23 +22,12 @@ export function Header() {
             </div>
           </div>
 
-          {/* Trust Indicators & Contact */}
-          <div className="flex items-center space-x-4 md:space-x-8">
-            {/* CTA Button */}
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+          {/* CTA Section */}
+          <div className="flex items-center">
+            {/* Primary CTA Button - Enhanced for maximum conversion */}
+            <button className="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
               Angebote erhalten
             </button>
-
-            {/* Contact Info */}
-            <div className="flex items-center space-x-4">
-              <a 
-                href="mailto:info@deinvergleich.net"
-                className="flex items-center space-x-2 text-sm text-gray-700 hover:text-indigo-600 transition-colors duration-200"
-              >
-                <Mail className="w-4 h-4" />
-                <span className="hidden md:inline">Kontakt</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
