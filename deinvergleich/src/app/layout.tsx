@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "deinvergleich.net - Ihr DSGVO-Experte",
-  description: "Professionelle DSGVO-Beratung und externer Datenschutzbeauftragter. Kostenlose Erstberatung für Ihr Unternehmen.",
-  keywords: "DSGVO, Datenschutz, Datenschutzbeauftragter, DSB, Beratung, Compliance",
+  title: "deinvergleich.net - Datenschutz-Anbieter Vergleich",
+  description: "Deutschlands führendes Vergleichsportal für Datenschutz-Dienstleister. Finden Sie kostenlos den passenden DSGVO-Experten für Ihr Unternehmen.",
+  keywords: "DSGVO Vergleich, Datenschutz Anbieter, Datenschutzbeauftragter finden, DSB Vergleich, Datenschutz Portal, DSGVO Beratung",
   authors: [{ name: "deinvergleich.net" }],
   creator: "deinvergleich.net",
   publisher: "deinvergleich.net",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: "https://deinvergleich.net",
     siteName: "deinvergleich.net",
-    title: "deinvergleich.net - Ihr DSGVO-Experte",
-    description: "Professionelle DSGVO-Beratung und externer Datenschutzbeauftragter. Kostenlose Erstberatung für Ihr Unternehmen.",
+    title: "deinvergleich.net - Datenschutz-Anbieter Vergleich",
+    description: "Deutschlands führendes Vergleichsportal für Datenschutz-Dienstleister. Finden Sie kostenlos den passenden DSGVO-Experten für Ihr Unternehmen.",
     images: [
       {
         url: "/og-image.jpg",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "deinvergleich.net - Ihr DSGVO-Experte",
-    description: "Professionelle DSGVO-Beratung und externer Datenschutzbeauftragter. Kostenlose Erstberatung für Ihr Unternehmen.",
+    title: "deinvergleich.net - Datenschutz-Anbieter Vergleich",
+    description: "Deutschlands führendes Vergleichsportal für Datenschutz-Dienstleister. Finden Sie kostenlos den passenden DSGVO-Experten für Ihr Unternehmen.",
     images: ["/og-image.jpg"],
   },
   alternates: {
