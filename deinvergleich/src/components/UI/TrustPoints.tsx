@@ -11,8 +11,8 @@ export function TrustPoints() {
           />
         </svg>
       ),
-      title: 'DSGVO-Experten seit 2018',
-      description: 'Über 500 Unternehmen vertrauen auf unsere Expertise im Datenschutz.'
+      title: 'Geprüfte DSGVO-Anbieter',
+      description: 'Über 200 qualifizierte Datenschutz-Experten in unserem Netzwerk.'
     },
     {
       icon: (
@@ -25,8 +25,8 @@ export function TrustPoints() {
           />
         </svg>
       ),
-      title: 'Antwort in 24h',
-      description: 'Schnelle Reaktionszeiten für Ihre dringenden Datenschutz-Fragen.'
+      title: 'Schnelle Vermittlung',
+      description: 'Passende Angebote von qualifizierten Anbietern innerhalb von 24h.'
     },
     {
       icon: (
@@ -39,8 +39,8 @@ export function TrustPoints() {
           />
         </svg>
       ),
-      title: 'Rechtssichere Betreuung',
-      description: 'Zertifizierte Datenschutzbeauftragte mit Anwaltshaftung.'
+      title: 'Nur seriöse Anbieter',
+      description: 'Alle Partner sind zertifizierte Datenschutzbeauftragte mit Anwaltshaftung.'
     },
     {
       icon: (
@@ -54,7 +54,7 @@ export function TrustPoints() {
         </svg>
       ),
       title: 'Für alle Unternehmensgrößen',
-      description: 'Von Start-ups bis Konzerne - maßgeschneiderte Lösungen.'
+      description: 'Von Start-ups bis Konzerne - wir finden den passenden Anbieter.'
     },
     {
       icon: (
@@ -67,8 +67,8 @@ export function TrustPoints() {
           />
         </svg>
       ),
-      title: 'Kostenlose Erstberatung',
-      description: '30 Minuten unverbindliche Beratung zu Ihrem Datenschutz.'
+      title: 'Kostenloser Vergleich',
+      description: 'Unser Service ist für Sie vollständig kostenlos und unverbindlich.'
     },
     {
       icon: (
@@ -81,8 +81,8 @@ export function TrustPoints() {
           />
         </svg>
       ),
-      title: 'Sofortige Entlastung',
-      description: 'Wir kümmern uns um alle DSGVO-Anforderungen für Ihr Unternehmen.'
+      title: 'Neutrale Beratung',
+      description: 'Wir vermitteln unabhängig und neutral den besten Anbieter für Sie.'
     }
   ];
 
@@ -94,8 +94,8 @@ export function TrustPoints() {
             Warum deinvergleich.net?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Als Ihre DSGVO-Experten sorgen wir für rechtssichere Datenschutz-Compliance 
-            in Ihrem Unternehmen - professionell, zuverlässig und kostengünstig.
+            Als Deutschlands führendes Vergleichsportal für Datenschutz-Dienstleister 
+            finden wir für Sie den passenden DSGVO-Experten - schnell, kostenlos und unverbindlich.
           </p>
         </div>
 
@@ -122,16 +122,16 @@ export function TrustPoints() {
         <div className="mt-16 bg-indigo-600 rounded-xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-white mb-2">500+</div>
-              <div className="text-indigo-200">Betreute Unternehmen</div>
+              <div className="text-3xl font-bold text-white mb-2">1000+</div>
+              <div className="text-indigo-200">Erfolgreiche Vermittlungen</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-white mb-2">5+ Jahre</div>
-              <div className="text-indigo-200">DSGVO-Erfahrung</div>
+              <div className="text-3xl font-bold text-white mb-2">200+</div>
+              <div className="text-indigo-200">Qualifizierte Partner</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-white mb-2">24h</div>
-              <div className="text-indigo-200">Durchschnittliche Antwortzeit</div>
+              <div className="text-indigo-200">Bis zu passenden Angeboten</div>
             </div>
           </div>
         </div>
@@ -140,8 +140,8 @@ export function TrustPoints() {
         <div className="mt-12 bg-gray-50 rounded-lg p-6">
           <blockquote className="text-center">
             <p className="text-lg text-gray-700 italic mb-4">
-              "Seit wir mit deinvergleich.net zusammenarbeiten, sind alle unsere 
-              Datenschutz-Sorgen Geschichte. Professionell, schnell und immer erreichbar."
+              "Dank deinvergleich.net haben wir schnell den perfekten Datenschutz-Anbieter 
+              gefunden. Kostenlos, unkompliziert und sehr professionell."
             </p>
             <footer className="text-sm text-gray-600">
               <strong>Maria Schmidt</strong>, Geschäftsführerin einer Steuerberatung

@@ -1,6 +1,6 @@
 'use client';
 
-import { ProgressBar } from './ProgressBar';
+import ProgressBar from './ProgressBar';
 import { useMultiStepForm } from '@/hooks/useMultiStepForm';
 
 interface MultiStepFormProps {
@@ -24,38 +24,38 @@ export function MultiStepForm({ children }: MultiStepFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+    <div className="w-full">
+      <div className="w-full max-w-4xl mx-auto">
+        {/* Header Section - Mobile-optimized */}
+        <div className="text-center mb-6 sm:mb-8 lg:mb-10 px-4 sm:px-0">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">
             Kostenlose DSGVO-Beratung
-          </h1>
-          <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+          </h2>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Erhalten Sie eine unverbindliche Erstberatung für Ihr Unternehmen. 
             Unsere Experten helfen Ihnen bei der DSGVO-Compliance.
           </p>
         </div>
 
-        {/* Main form container */}
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-          {/* Progress bar */}
-          <div className="px-6 py-6 bg-gray-50 border-b border-gray-200">
+        {/* Main form container - Enhanced responsive design */}
+        <div className="bg-white rounded-lg sm:rounded-xl shadow-lg sm:shadow-xl overflow-hidden border border-gray-200">
+          {/* Progress bar - Mobile-optimized */}
+          <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 bg-gray-50 border-b border-gray-200">
             <ProgressBar 
               currentStep={state.currentStep} 
               totalSteps={4}
             />
           </div>
 
-          {/* Form content */}
-          <div className="px-6 py-8">
+          {/* Form content - Responsive padding */}
+          <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
             <div className="slide-in">
               {children}
             </div>
           </div>
 
-          {/* Navigation buttons */}
-          <div className="px-6 py-6 bg-gray-50 border-t border-gray-200">
+          {/* Navigation buttons - Mobile-optimized */}
+          <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 bg-gray-50 border-t border-gray-200">
             <NavigationButtons
               currentStep={state.currentStep}
               canProceed={canProceed()}
@@ -66,13 +66,13 @@ export function MultiStepForm({ children }: MultiStepFormProps) {
           </div>
         </div>
 
-        {/* Success message */}
+        {/* Success message - Enhanced responsive design */}
         {state.isCompleted && (
-          <div className="mt-8 bg-green-50 border border-green-200 rounded-lg p-6">
-            <div className="flex items-center">
+          <div className="mt-6 sm:mt-8 bg-green-50 border border-green-200 rounded-lg p-4 sm:p-6 mx-4 sm:mx-0">
+            <div className="flex items-start sm:items-center">
               <div className="flex-shrink-0">
                 <svg
-                  className="h-5 w-5 text-green-400"
+                  className="h-5 w-5 text-green-400 mt-0.5 sm:mt-0"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -84,7 +84,7 @@ export function MultiStepForm({ children }: MultiStepFormProps) {
                 </svg>
               </div>
               <div className="ml-3">
-                <p className="text-sm font-medium text-green-800">
+                <p className="text-sm sm:text-base font-medium text-green-800 leading-relaxed">
                   Vielen Dank für Ihre Anfrage! Wir melden uns in Kürze bei Ihnen.
                 </p>
               </div>
@@ -115,15 +115,15 @@ function NavigationButtons({
   const isLastStep = currentStep === 3;
 
   return (
-    <div className="flex justify-between">
-      {/* Previous button */}
+    <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-4">
+      {/* Previous button - Full width on mobile */}
       <button
         type="button"
         onClick={onPrev}
         disabled={isFirstStep || isSubmitting}
-        className={`inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md transition-colors duration-200 ${
+        className={`w-full sm:w-auto inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-2 border border-gray-300 text-sm font-medium rounded-md transition-colors duration-200 ${
           isFirstStep || isSubmitting
-            ? 'text-gray-400 cursor-not-allowed'
+            ? 'text-gray-400 cursor-not-allowed bg-gray-50'
             : 'text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
         }`}
       >
@@ -140,15 +140,16 @@ function NavigationButtons({
             d="M15 19l-7-7 7-7"
           />
         </svg>
-        Zurück
+        <span className="hidden sm:inline">Zurück</span>
+        <span className="sm:hidden">Vorheriger Schritt</span>
       </button>
 
-      {/* Next/Submit button */}
+      {/* Next/Submit button - Full width on mobile */}
       <button
         type="button"
         onClick={onNext}
         disabled={!canProceed || isSubmitting}
-        className={`inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white transition-all duration-200 ${
+        className={`w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-2 border border-transparent text-sm font-medium rounded-md text-white transition-all duration-200 min-w-0 sm:min-w-[120px] ${
           !canProceed || isSubmitting
             ? 'bg-gray-400 cursor-not-allowed'
             : 'bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-md hover:shadow-lg'
@@ -162,16 +163,18 @@ function NavigationButtons({
           </div>
         )}
         
-        {isSubmitting
-          ? 'Wird gesendet...'
-          : isLastStep
-          ? 'Anfrage senden'
-          : 'Weiter'
-        }
+        <span className="truncate">
+          {isSubmitting
+            ? 'Wird gesendet...'
+            : isLastStep
+            ? 'Anfrage senden'
+            : 'Weiter'
+          }
+        </span>
         
         {!isSubmitting && !isLastStep && (
           <svg
-            className="w-4 h-4 ml-2"
+            className="w-4 h-4 ml-2 flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
