@@ -104,7 +104,7 @@ export default function HomePage() {
             <div>
               <h4 className="text-base font-semibold mb-4">Kontakt</h4>
               <div className="text-gray-300 text-sm space-y-2">
-                <p>E-Mail: info@deinvergleich.net</p>
+                <p>E-Mail: matthias.frank@deinvergleich.net</p>
                 <p>Mo-Fr: 9:00 - 18:00 Uhr</p>
               </div>
             </div>
