@@ -156,7 +156,7 @@ function NavigationButtons({
           {isSubmitting
             ? 'Wird gesendet...'
             : isLastStep
-            ? 'Anfrage senden'
+            ? 'Jetzt Angebote erhalten'
             : 'Weiter'
           }
         </span>

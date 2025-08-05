@@ -97,15 +97,14 @@ export default function HomePage() {
             <div className="sm:col-span-2 lg:col-span-1">
               <h3 className="text-lg font-semibold mb-4">deinvergleich.net</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                Ihr professioneller Partner für DSGVO-Compliance und Datenschutz. 
-                Rechtssicher, zuverlässig und kostengünstig.
+                Einfach, schnell und kostenlos Angebote erhalten"
+
               </p>
             </div>
             <div>
               <h4 className="text-base font-semibold mb-4">Kontakt</h4>
               <div className="text-gray-300 text-sm space-y-2">
                 <p>E-Mail: info@deinvergleich.net</p>
-                <p>Telefon: +49 (0) 123 456 789</p>
                 <p>Mo-Fr: 9:00 - 18:00 Uhr</p>
               </div>
             </div>
@@ -117,9 +116,6 @@ export default function HomePage() {
                 </a>
                 <a href="/datenschutz" className="block hover:text-white transition-colors duration-200">
                   Datenschutzerklärung
-                </a>
-                <a href="/agb" className="block hover:text-white transition-colors duration-200">
-                  AGB
                 </a>
               </div>
             </div>
