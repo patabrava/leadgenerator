@@ -74,8 +74,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Form and Trust Points Section - Stacked Layout */}
-        <section className="pb-16 sm:pb-20 lg:pb-24">
+  {/* Form and Trust Points Section - Stacked Layout */}
+  <section id="form-start" className="pb-16 sm:pb-20 lg:pb-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Form Section */}
             <div className="mb-12 lg:mb-16">
@@ -97,15 +97,17 @@ export default function HomePage() {
             <div className="sm:col-span-2 lg:col-span-1">
               <h3 className="text-lg font-semibold mb-4">deinvergleich.net</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                Einfach, schnell und kostenlos Angebote erhalten"
+                Einfach, schnell und kostenlos Angebote erhalten
 
               </p>
             </div>
             <div>
               <h4 className="text-base font-semibold mb-4">Kontakt</h4>
               <div className="text-gray-300 text-sm space-y-2">
+                <p>Adresse: Hagenauer Str. 16, 10435 Berlin</p>
+            
                 <p>E-Mail: matthias.frank@deinvergleich.net</p>
-                <p>Mo-Fr: 9:00 - 18:00 Uhr</p>
+                
               </div>
             </div>
             <div>

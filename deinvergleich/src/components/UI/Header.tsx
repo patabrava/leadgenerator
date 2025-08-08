@@ -25,7 +25,19 @@ export function Header() {
           {/* CTA Section */}
           <div className="flex items-center">
             {/* Primary CTA Button - Enhanced for maximum conversion */}
-            <button className="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button
+              className="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              onClick={() => {
+                const target = document.getElementById('form-start');
+                if (target) {
+                  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                  // Fallback to hash navigation if target not on DOM yet
+                  window.location.hash = 'form-start';
+                }
+              }}
+              aria-controls="form-start"
+            >
               Angebote erhalten
             </button>
           </div>
