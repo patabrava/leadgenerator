@@ -9,18 +9,18 @@ export function StepCompany() {
   return (
     <div className="space-y-6 sm:space-y-8">
       <div>
-        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-3 font-display">
           Unternehmensdaten
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-body">
           Bitte geben Sie die grundlegenden Informationen zu Ihrem Unternehmen ein.
         </p>
       </div>
 
       <div className="space-y-4 sm:space-y-6">
-        {/* Company Name - Full width with enhanced mobile design */}
+        {/* Company Name */}
         <div>
-          <label htmlFor="unternehmen" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="unternehmen" className="block text-sm font-medium text-foreground mb-2 font-body">
             Firmenname *
           </label>
           <input
@@ -29,23 +29,22 @@ export function StepCompany() {
             name="unternehmen"
             value={state.data.unternehmen || ''}
             onChange={(e) => setField('unternehmen', e.target.value)}
-            className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-sm sm:text-base ${
+            className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm transition-colors text-sm sm:text-base font-body focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring ${
               state.errors.unternehmen
-                ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                : 'border-gray-300 hover:border-gray-400'
+                ? 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive'
+                : 'border-input hover:border-muted-foreground/50'
             }`}
             placeholder="Ihre Firma GmbH"
           />
           {state.errors.unternehmen && (
-            <p className="mt-2 text-sm text-red-600 leading-relaxed">{state.errors.unternehmen}</p>
+            <p className="mt-2 text-sm text-destructive leading-relaxed font-body" role="alert">{state.errors.unternehmen}</p>
           )}
         </div>
 
-        {/* Postal Code and Country Grid - Enhanced responsive design */}
+        {/* Postal Code and Country Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-          {/* Postal Code */}
           <div>
-            <label htmlFor="plz" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="plz" className="block text-sm font-medium text-foreground mb-2 font-body">
               Postleitzahl *
             </label>
             <input
@@ -54,10 +53,10 @@ export function StepCompany() {
               name="plz"
               value={state.data.plz || ''}
               onChange={(e) => setField('plz', e.target.value)}
-              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-sm sm:text-base ${
+              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm transition-colors text-sm sm:text-base font-body focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring ${
                 state.errors.plz
-                  ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                  : 'border-gray-300 hover:border-gray-400'
+                  ? 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive'
+                  : 'border-input hover:border-muted-foreground/50'
               }`}
               placeholder="12345"
               maxLength={5}
@@ -65,13 +64,12 @@ export function StepCompany() {
               pattern="[0-9]*"
             />
             {state.errors.plz && (
-              <p className="mt-2 text-sm text-red-600 leading-relaxed">{state.errors.plz}</p>
+              <p className="mt-2 text-sm text-destructive leading-relaxed font-body" role="alert">{state.errors.plz}</p>
             )}
           </div>
 
-          {/* Country */}
           <div>
-            <label htmlFor="land" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="land" className="block text-sm font-medium text-foreground mb-2 font-body">
               Land *
             </label>
             <select
@@ -79,10 +77,10 @@ export function StepCompany() {
               name="land"
               value={state.data.land || ''}
               onChange={(e) => setField('land', e.target.value)}
-              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-sm sm:text-base bg-white ${
+              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm transition-colors text-sm sm:text-base bg-card font-body focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring ${
                 state.errors.land
-                  ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                  : 'border-gray-300 hover:border-gray-400'
+                  ? 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive'
+                  : 'border-input hover:border-muted-foreground/50'
               }`}
             >
               <option value="">Land auswählen</option>
@@ -93,20 +91,21 @@ export function StepCompany() {
               ))}
             </select>
             {state.errors.land && (
-              <p className="mt-2 text-sm text-red-600 leading-relaxed">{state.errors.land}</p>
+              <p className="mt-2 text-sm text-destructive leading-relaxed font-body" role="alert">{state.errors.land}</p>
             )}
           </div>
         </div>
       </div>
 
       {/* Info box */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="bg-info-light border border-info-border rounded-lg p-4">
         <div className="flex">
           <div className="flex-shrink-0">
             <svg
-              className="h-5 w-5 text-blue-400"
+              className="h-5 w-5 text-info"
               viewBox="0 0 20 20"
               fill="currentColor"
+              aria-hidden="true"
             >
               <path
                 fillRule="evenodd"
@@ -116,8 +115,8 @@ export function StepCompany() {
             </svg>
           </div>
           <div className="ml-3">
-            <p className="text-sm text-blue-700">
-              Diese Informationen helfen uns dabei, Sie optimal zu beraten und 
+            <p className="text-sm text-info font-body">
+              Diese Informationen helfen uns dabei, Sie optimal zu beraten und
               rechtliche Anforderungen für Ihr Land zu berücksichtigen.
             </p>
           </div>

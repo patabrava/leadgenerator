@@ -4,43 +4,34 @@ import { Search } from 'lucide-react';
 
 export function Header() {
   return (
-    <header className="bg-white border-b border-gray-200 shadow-sm">
+    <header className="bg-card border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 md:py-6">
-          {/* Logo and Brand */}
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-indigo-600 rounded-lg">
-              <Search className="w-6 h-6 text-white" />
+        <div className="flex justify-between items-center py-4 md:py-5">
+          <a href="/" className="flex items-center gap-3">
+            <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
+              <Search className="w-5 h-5 text-primary-foreground" aria-hidden="true" />
             </div>
             <div>
-              <h1 className="text-xl md:text-2xl font-bold text-gray-900">
+              <span className="text-xl md:text-2xl font-bold text-foreground font-display block">
                 deinvergleich.com
-              </h1>
-              <p className="text-sm text-indigo-600 font-medium hidden sm:block">
+              </span>
+              <span className="text-sm text-primary font-medium hidden sm:block font-body">
                 Datenschutz-Vergleichsportal
-              </p>
+              </span>
             </div>
-          </div>
+          </a>
 
-          {/* CTA Section */}
-          <div className="flex items-center">
-            {/* Primary CTA Button - Enhanced for maximum conversion */}
-            <button
-              className="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              onClick={() => {
-                const target = document.getElementById('form-start');
-                if (target) {
-                  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else {
-                  // Fallback to hash navigation if target not on DOM yet
-                  window.location.hash = 'form-start';
-                }
-              }}
-              aria-controls="form-start"
-            >
-              Angebote erhalten
-            </button>
-          </div>
+          <button
+            className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-2.5 rounded-lg text-sm font-semibold font-body transition-colors duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            onClick={() => {
+              const target = document.getElementById('main-content');
+              if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            Angebote erhalten
+          </button>
         </div>
       </div>
     </header>

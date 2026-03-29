@@ -1,34 +1,33 @@
 import { Header } from '@/components/UI/Header';
+import { Footer } from '@/components/UI/Footer';
 
 export default function ImpressumPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="py-12 lg:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-sm p-6 sm:p-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+          <div className="bg-card rounded-lg shadow-sm p-6 sm:p-8">
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 font-display">
               Impressum
             </h1>
-            
-            {/* Essential Impressum Information */}
+
             <div className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              <h2 className="text-xl font-semibold text-foreground mb-4 font-display">
                 Angaben gemäß § 5 TMG
               </h2>
-              <div className="text-gray-700 space-y-2">
+              <div className="text-secondary-foreground space-y-2 font-body">
                 <p><strong>Betreiber:</strong> deinvergleich.com</p>
                 <p><strong>E-Mail:</strong> matthias.frank@deinvergleich.com</p>
               </div>
             </div>
 
-            {/* Data Protection Information */}
             <div className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              <h2 className="text-xl font-semibold text-foreground mb-4 font-display">
                 Datenschutzrechtliche Pflichtinformationen
               </h2>
-              <div className="text-gray-700 leading-relaxed">
+              <div className="text-secondary-foreground leading-relaxed font-body">
                 <p className="mb-4">
                   Im Falle des Erstkontakts sind wir verpflichtet, Ihnen folgende datenschutzrechtliche Pflichtinformationen zur Verfügung zu stellen:
                 </p>
@@ -44,13 +43,12 @@ export default function ImpressumPage() {
               </div>
             </div>
 
-            {/* Back to Home Link */}
-            <div className="pt-6 border-t border-gray-200">
-              <a 
-                href="/" 
-                className="inline-flex items-center text-indigo-600 hover:text-indigo-500 transition-colors duration-200"
+            <div className="pt-6 border-t border-border">
+              <a
+                href="/"
+                className="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-200 font-body"
               >
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
                 Zurück zur Startseite
@@ -60,14 +58,7 @@ export default function ImpressumPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-gray-400 text-sm">
-            <p>&copy; 2025 deinvergleich.com. Alle Rechte vorbehalten.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

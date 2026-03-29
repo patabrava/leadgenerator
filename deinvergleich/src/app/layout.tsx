@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Source_Serif_4, Outfit } from "next/font/google";
 
 import "./globals.css";
 
-const inter = Inter({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-source-serif",
+  weight: ["600", "700"],
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
 });
 
 export const metadata: Metadata = {
@@ -43,7 +50,7 @@ export const metadata: Metadata = {
     canonical: "https://deinvergleich.com",
   },
   other: {
-    "theme-color": "#6366f1",
+    "theme-color": "#0f766e",
   },
 };
 
@@ -53,8 +60,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={inter.variable}>
-      <body className="font-inter min-h-screen bg-gray-50 text-gray-900 antialiased">
+    <html lang="de" className={`${sourceSerif.variable} ${outfit.variable}`}>
+      <body className="font-body min-h-screen bg-background text-foreground antialiased">
+        <a href="#main-content" className="skip-link">
+          Zum Hauptinhalt springen
+        </a>
         {children}
       </body>
     </html>

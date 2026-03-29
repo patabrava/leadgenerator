@@ -6,20 +6,20 @@ export function StepContact() {
   const { state, setField } = useMultiStepForm();
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 sm:space-y-8">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-3 font-display">
           Kontaktdaten
         </h2>
-        <p className="text-gray-600">
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-body">
           Wie können wir Sie am besten erreichen? Ihre Daten werden vertraulich behandelt.
         </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 sm:space-y-6">
         {/* Full Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 font-body">
             Ihr Name *
           </label>
           <input
@@ -28,21 +28,21 @@ export function StepContact() {
             name="name"
             value={state.data.name || ''}
             onChange={(e) => setField('name', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
+            className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm transition-colors text-sm sm:text-base font-body focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring ${
               state.errors.name
-                ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                : 'border-gray-300'
+                ? 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive'
+                : 'border-input hover:border-muted-foreground/50'
             }`}
             placeholder="Max Mustermann"
           />
           {state.errors.name && (
-            <p className="mt-1 text-sm text-red-600">{state.errors.name}</p>
+            <p className="mt-2 text-sm text-destructive font-body" role="alert">{state.errors.name}</p>
           )}
         </div>
 
         {/* Phone Number */}
         <div>
-          <label htmlFor="telefonnummer" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="telefonnummer" className="block text-sm font-medium text-foreground mb-2 font-body">
             Telefonnummer *
           </label>
           <input
@@ -51,24 +51,24 @@ export function StepContact() {
             name="telefonnummer"
             value={state.data.telefonnummer || ''}
             onChange={(e) => setField('telefonnummer', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
+            className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm transition-colors text-sm sm:text-base font-body focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring ${
               state.errors.telefonnummer
-                ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                : 'border-gray-300'
+                ? 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive'
+                : 'border-input hover:border-muted-foreground/50'
             }`}
             placeholder="+49 123 456789"
           />
           {state.errors.telefonnummer && (
-            <p className="mt-1 text-sm text-red-600">{state.errors.telefonnummer}</p>
+            <p className="mt-2 text-sm text-destructive font-body" role="alert">{state.errors.telefonnummer}</p>
           )}
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1.5 text-sm text-muted-foreground font-body">
             Beispiel: +49 123 456789 oder 0123 456789
           </p>
         </div>
 
         {/* Email Address */}
         <div>
-          <label htmlFor="emailadresse" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="emailadresse" className="block text-sm font-medium text-foreground mb-2 font-body">
             E-Mail-Adresse *
           </label>
           <input
@@ -77,27 +77,28 @@ export function StepContact() {
             name="emailadresse"
             value={state.data.emailadresse || ''}
             onChange={(e) => setField('emailadresse', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
+            className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm transition-colors text-sm sm:text-base font-body focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring ${
               state.errors.emailadresse
-                ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                : 'border-gray-300'
+                ? 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive'
+                : 'border-input hover:border-muted-foreground/50'
             }`}
             placeholder="max.mustermann@firma.de"
           />
           {state.errors.emailadresse && (
-            <p className="mt-1 text-sm text-red-600">{state.errors.emailadresse}</p>
+            <p className="mt-2 text-sm text-destructive font-body" role="alert">{state.errors.emailadresse}</p>
           )}
         </div>
       </div>
 
       {/* Privacy Info */}
-      <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+      <div className="bg-success-light border border-success-border rounded-lg p-4">
         <div className="flex">
           <div className="flex-shrink-0">
             <svg
-              className="h-5 w-5 text-green-400"
+              className="h-5 w-5 text-success"
               viewBox="0 0 20 20"
               fill="currentColor"
+              aria-hidden="true"
             >
               <path
                 fillRule="evenodd"
@@ -107,9 +108,9 @@ export function StepContact() {
             </svg>
           </div>
           <div className="ml-3">
-            <p className="text-sm text-green-700">
-              <strong>Datenschutz garantiert:</strong> Ihre Kontaktdaten werden ausschließlich 
-              für die Beratung verwendet und nicht an Dritte weitergegeben. 
+            <p className="text-sm text-success font-body">
+              <strong>Datenschutz garantiert:</strong> Ihre Kontaktdaten werden ausschließlich
+              für die Beratung verwendet und nicht an Dritte weitergegeben.
               Wir sind selbst DSGVO-Experten und nehmen Datenschutz sehr ernst.
             </p>
           </div>

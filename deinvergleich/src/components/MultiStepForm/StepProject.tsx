@@ -6,36 +6,34 @@ import { DSB_OPTIONS, COMPANY_SIZES } from '@/schemas/formSchema';
 export function StepProject() {
   const { state, setField } = useMultiStepForm();
 
-  // Format date for input field (YYYY-MM-DD)
   const formatDateForInput = (dateString: string | undefined) => {
     if (!dateString) return '';
     const date = new Date(dateString);
     return date.toISOString().split('T')[0];
   };
 
-  // Get minimum date (today)
   const getMinDate = () => {
     const today = new Date();
     return today.toISOString().split('T')[0];
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 sm:space-y-8">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-3 font-display">
           Projektdetails
         </h2>
-        <p className="text-gray-600">
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-body">
           Helfen Sie uns, Ihren spezifischen Bedarf zu verstehen.
         </p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* DSB Status */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-3">
+        <fieldset>
+          <legend className="block text-sm font-medium text-foreground mb-3 font-body">
             Externer Datenschutzbeauftragter (DSB) *
-          </label>
+          </legend>
           <div className="space-y-3">
             {DSB_OPTIONS.map((option) => (
               <div key={option.value} className="flex items-start">
@@ -47,13 +45,13 @@ export function StepProject() {
                     value={option.value}
                     checked={state.data.dsbVorhanden === option.value}
                     onChange={(e) => setField('dsbVorhanden', e.target.value)}
-                    className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
+                    className="h-5 w-5 text-primary border-input focus-visible:ring-ring"
                   />
                 </div>
                 <div className="ml-3 text-sm">
-                  <label 
-                    htmlFor={`dsb-${option.value}`} 
-                    className="font-medium text-gray-700 cursor-pointer"
+                  <label
+                    htmlFor={`dsb-${option.value}`}
+                    className="font-medium text-foreground cursor-pointer font-body"
                   >
                     {option.label}
                   </label>
@@ -62,13 +60,13 @@ export function StepProject() {
             ))}
           </div>
           {state.errors.dsbVorhanden && (
-            <p className="mt-2 text-sm text-red-600">{state.errors.dsbVorhanden}</p>
+            <p className="mt-2 text-sm text-destructive font-body" role="alert">{state.errors.dsbVorhanden}</p>
           )}
-        </div>
+        </fieldset>
 
         {/* Start Date */}
         <div>
-          <label htmlFor="start" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="start" className="block text-sm font-medium text-foreground mb-2 font-body">
             Gewünschter Starttermin *
           </label>
           <input
@@ -78,23 +76,23 @@ export function StepProject() {
             value={formatDateForInput(state.data.start)}
             min={getMinDate()}
             onChange={(e) => setField('start', e.target.value)}
-            className={`w-full md:w-auto px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
+            className={`w-full md:w-auto px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm transition-colors text-sm sm:text-base font-body focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring ${
               state.errors.start
-                ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                : 'border-gray-300'
+                ? 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive'
+                : 'border-input hover:border-muted-foreground/50'
             }`}
           />
           {state.errors.start && (
-            <p className="mt-1 text-sm text-red-600">{state.errors.start}</p>
+            <p className="mt-2 text-sm text-destructive font-body" role="alert">{state.errors.start}</p>
           )}
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1.5 text-sm text-muted-foreground font-body">
             Wann soll die Betreuung beginnen?
           </p>
         </div>
 
         {/* Company Size */}
         <div>
-          <label htmlFor="unternehmensgroesse" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="unternehmensgroesse" className="block text-sm font-medium text-foreground mb-2 font-body">
             Unternehmensgröße *
           </label>
           <select
@@ -102,10 +100,10 @@ export function StepProject() {
             name="unternehmensgroesse"
             value={state.data.unternehmensgroesse || ''}
             onChange={(e) => setField('unternehmensgroesse', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
+            className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg shadow-sm transition-colors text-sm sm:text-base font-body bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring ${
               state.errors.unternehmensgroesse
-                ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                : 'border-gray-300'
+                ? 'border-destructive focus-visible:ring-destructive focus-visible:border-destructive'
+                : 'border-input hover:border-muted-foreground/50'
             }`}
           >
             <option value="">Anzahl Mitarbeiter auswählen</option>
@@ -116,9 +114,9 @@ export function StepProject() {
             ))}
           </select>
           {state.errors.unternehmensgroesse && (
-            <p className="mt-1 text-sm text-red-600">{state.errors.unternehmensgroesse}</p>
+            <p className="mt-2 text-sm text-destructive font-body" role="alert">{state.errors.unternehmensgroesse}</p>
           )}
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1.5 text-sm text-muted-foreground font-body">
             Die Unternehmensgröße hilft uns bei der passenden Beratung.
           </p>
         </div>

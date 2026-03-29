@@ -1,6 +1,7 @@
 'use client';
 
 import { Header } from '@/components/UI/Header';
+import { Footer } from '@/components/UI/Footer';
 import { MultiStepFormProvider } from '@/hooks/useMultiStepForm';
 import { MultiStepForm } from '@/components/MultiStepForm';
 import { StepCompany } from '@/components/MultiStepForm/StepCompany';
@@ -37,96 +38,39 @@ function FormContent() {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header />
-      
-      {/* Main Content Container - Responsive Layout */}
-      <main className="min-h-screen">
-        {/* Hero Section - Mobile-first responsive design */}
-        <section className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-8 sm:py-12 lg:py-16">
+
+      <main id="main-content">
+        {/* Hero — left-aligned, no gradient */}
+        <section className="bg-primary-light py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 lg:mb-12">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-                Finden Sie den perfekten
-                <span className="text-indigo-600 block mt-1">Datenschutz-Experten</span>
+            <div className="max-w-2xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight font-display">
+                Finden Sie den perfekten Datenschutz-Experten
               </h1>
-              <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Kostenloser Vergleich qualifizierter Datenschutz-Anbieter in Deutschland. 
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-body">
+                Kostenloser Vergleich qualifizierter Datenschutz-Anbieter in Deutschland.
                 Erhalten Sie in wenigen Minuten passende Angebote für Ihr Unternehmen.
               </p>
-              
-              {/* Trust Badges */}
-              <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-600 mt-6 sm:mt-8">
-                <div className="flex items-center space-x-2">
-                  <svg className="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <span className="font-medium">500+ Anbieter</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Geprüfte Experten</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-  {/* Form and Trust Points Section - Stacked Layout */}
-  <section id="form-start" className="pb-16 sm:pb-20 lg:pb-24">
+        {/* Form */}
+        <section id="form-start" className="py-12 sm:py-16 lg:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Form Section */}
-            <div className="mb-12 lg:mb-16">
-              <MultiStepFormProvider>
-                <FormContent />
-              </MultiStepFormProvider>
-            </div>
-            
-            {/* Trust Points Section - Below Form */}
-            <TrustPoints />
+            <MultiStepFormProvider>
+              <FormContent />
+            </MultiStepFormProvider>
           </div>
         </section>
+
+        {/* Trust points */}
+        <TrustPoints />
       </main>
 
-      {/* Footer - Enhanced responsive layout */}
-      <footer className="bg-gray-900 text-white py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg font-semibold mb-4">deinvergleich.com</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Einfach, schnell und kostenlos Angebote erhalten
-
-              </p>
-            </div>
-            <div>
-              <h4 className="text-base font-semibold mb-4">Kontakt</h4>
-              <div className="text-gray-300 text-sm space-y-2">
-                <p>Adresse: Hagenauer Str. 16, 10435 Berlin</p>
-            
-                <p>E-Mail: matthias.frank@deinvergleich.com</p>
-                
-              </div>
-            </div>
-            <div>
-              <h4 className="text-base font-semibold mb-4">Rechtliches</h4>
-              <div className="text-gray-300 text-sm space-y-2">
-                <a href="/impressum" className="block hover:text-white transition-colors duration-200">
-                  Impressum
-                </a>
-                <a href="/datenschutz" className="block hover:text-white transition-colors duration-200">
-                  Datenschutzerklärung
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2025 deinvergleich.com. Alle Rechte vorbehalten.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

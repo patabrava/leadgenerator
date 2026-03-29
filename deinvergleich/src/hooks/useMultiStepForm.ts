@@ -29,6 +29,7 @@ export interface FormState {
   errors: Partial<Record<keyof FormData, string>>;
   isSubmitting: boolean;
   isCompleted: boolean;
+  submitError: string | null;
 }
 
 // Form actions
@@ -41,6 +42,7 @@ export type FormAction =
   | { type: 'GO_TO_STEP'; step: StepIndex }
   | { type: 'SET_SUBMITTING'; isSubmitting: boolean }
   | { type: 'SET_COMPLETED'; isCompleted: boolean }
+  | { type: 'SET_SUBMIT_ERROR'; error: string | null }
   | { type: 'RESET_FORM' };
 
 // Initial state
@@ -50,6 +52,7 @@ const initialState: FormState = {
   errors: {},
   isSubmitting: false,
   isCompleted: false,
+  submitError: null,
 };
 
 // Form reducer
@@ -62,7 +65,6 @@ function formReducer(state: FormState, action: FormAction): FormState {
           ...state.data,
           [action.field]: action.value,
         },
-        // Clear error for this field when user starts typing
         errors: {
           ...state.errors,
           [action.field]: undefined,
@@ -111,6 +113,12 @@ function formReducer(state: FormState, action: FormAction): FormState {
         isCompleted: action.isCompleted,
       };
 
+    case 'SET_SUBMIT_ERROR':
+      return {
+        ...state,
+        submitError: action.error,
+      };
+
     case 'RESET_FORM':
       return initialState;
 
@@ -123,7 +131,6 @@ function formReducer(state: FormState, action: FormAction): FormState {
 interface FormContextType {
   state: FormState;
   dispatch: React.Dispatch<FormAction>;
-  // Helper functions
   setField: (field: keyof FormData, value: string | boolean) => void;
   nextStep: () => Promise<boolean>;
   prevStep: () => void;
@@ -141,26 +148,24 @@ const FormContext = createContext<FormContextType | null>(null);
 export function MultiStepFormProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(formReducer, initialState);
 
-  // Helper function to set field value
   const setField = (field: keyof FormData, value: string | boolean) => {
     dispatch({ type: 'SET_FIELD', field, value });
   };
 
-  // Validate current step
   const validateCurrentStep = async (): Promise<boolean> => {
     const currentStepConfig = FORM_STEPS[state.currentStep];
     const result = await currentStepConfig.schema.safeParseAsync(state.data);
 
     if (!result.success) {
       const errors: Partial<Record<keyof FormData, string>> = {};
-      
+
       result.error.issues.forEach((issue) => {
         const field = issue.path[0] as keyof FormData;
         if (field) {
           errors[field] = issue.message;
         }
       });
-      
+
       dispatch({ type: 'SET_ERRORS', errors });
       return false;
     }
@@ -169,46 +174,41 @@ export function MultiStepFormProvider({ children }: { children: ReactNode }) {
     return true;
   };
 
-  // Check if current step can proceed
   const canProceed = (): boolean => {
     const currentStepConfig = FORM_STEPS[state.currentStep];
     const result = currentStepConfig.schema.safeParse(state.data);
     return result.success;
   };
 
-  // Move to next step with validation
   const nextStep = async (): Promise<boolean> => {
     const isValid = await validateCurrentStep();
-    
+
     if (isValid && state.currentStep < FORM_STEPS.length - 1) {
       dispatch({ type: 'NEXT_STEP' });
       return true;
     }
-    
+
     return false;
   };
 
-  // Move to previous step
   const prevStep = () => {
     if (state.currentStep > 0) {
       dispatch({ type: 'PREV_STEP' });
     }
   };
 
-  // Go to specific step
   const goToStep = (step: StepIndex) => {
     dispatch({ type: 'GO_TO_STEP', step });
   };
 
-  // Submit form
   const submitForm = async (): Promise<boolean> => {
-    // Validate all data
     const isValid = await validateCurrentStep();
-    
+
     if (!isValid) {
       return false;
     }
 
+    dispatch({ type: 'SET_SUBMIT_ERROR', error: null });
     dispatch({ type: 'SET_SUBMITTING', isSubmitting: true });
 
     try {
@@ -228,15 +228,17 @@ export function MultiStepFormProvider({ children }: { children: ReactNode }) {
       dispatch({ type: 'SET_COMPLETED', isCompleted: true });
       return true;
     } catch (error) {
-      console.error('Form submission error:', error);
-      // You could set a general error here if needed
+      const message =
+        error instanceof Error
+          ? error.message
+          : 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
+      dispatch({ type: 'SET_SUBMIT_ERROR', error: message });
       return false;
     } finally {
       dispatch({ type: 'SET_SUBMITTING', isSubmitting: false });
     }
   };
 
-  // Reset form to initial state
   const resetForm = () => {
     dispatch({ type: 'RESET_FORM' });
   };
@@ -264,10 +266,10 @@ export function MultiStepFormProvider({ children }: { children: ReactNode }) {
 // Custom hook to use form context
 export function useMultiStepForm(): FormContextType {
   const context = useContext(FormContext);
-  
+
   if (!context) {
     throw new Error('useMultiStepForm must be used within a MultiStepFormProvider');
   }
-  
+
   return context;
 }
