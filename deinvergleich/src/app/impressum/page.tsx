@@ -18,8 +18,8 @@ export default function ImpressumPage() {
                 Angaben gemäß § 5 TMG
               </h2>
               <div className="text-gray-700 space-y-2">
-                <p><strong>Betreiber:</strong> deinvergleich.net</p>
-                <p><strong>E-Mail:</strong> matthias.frank@deinvergleich.net</p>
+                <p><strong>Betreiber:</strong> deinvergleich.com</p>
+                <p><strong>E-Mail:</strong> matthias.frank@deinvergleich.com</p>
               </div>
             </div>
 
@@ -64,7 +64,7 @@ export default function ImpressumPage() {
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-gray-400 text-sm">
-            <p>&copy; 2025 deinvergleich.net. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 deinvergleich.com. Alle Rechte vorbehalten.</p>
           </div>
         </div>
       </footer>

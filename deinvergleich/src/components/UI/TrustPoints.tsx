@@ -91,7 +91,7 @@ export function TrustPoints() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Warum deinvergleich.net?
+            Warum deinvergleich.com?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Als Deutschlands führendes Vergleichsportal für Datenschutz-Dienstleister 
@@ -140,7 +140,7 @@ export function TrustPoints() {
         <div className="mt-12 bg-gray-50 rounded-lg p-6">
           <blockquote className="text-center">
             <p className="text-lg text-gray-700 italic mb-4">
-              "Dank deinvergleich.net haben wir schnell den perfekten Datenschutz-Anbieter 
+              "Dank deinvergleich.com haben wir schnell den perfekten Datenschutz-Anbieter 
               gefunden. Kostenlos, unkompliziert und sehr professionell."
             </p>
             <footer className="text-sm text-gray-600">

@@ -14,7 +14,7 @@ export function Header() {
             </div>
             <div>
               <h1 className="text-xl md:text-2xl font-bold text-gray-900">
-                deinvergleich.net
+                deinvergleich.com
               </h1>
               <p className="text-sm text-indigo-600 font-medium hidden sm:block">
                 Datenschutz-Vergleichsportal

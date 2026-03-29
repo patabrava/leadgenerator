@@ -126,7 +126,7 @@ export default function DatenschutzPage() {
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">c) Kontaktadresse für Ausübung Ihrer Rechte</h3>
               <p>
-                Jegliche Ersuchen zu Ihren personenbezogenen Daten richten Sie bitte an: <a href="mailto:matthias.frank@deinvergleich.net" className="text-indigo-600 hover:text-indigo-800">matthias.frank@deinvergleich.net</a>
+                Jegliche Ersuchen zu Ihren personenbezogenen Daten richten Sie bitte an: <a href="mailto:matthias.frank@deinvergleich.com" className="text-indigo-600 hover:text-indigo-800">matthias.frank@deinvergleich.com</a>
               </p>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">d) Beschwerderecht bei der Aufsichtsbehörde</h3>
@@ -150,7 +150,7 @@ export default function DatenschutzPage() {
                 Stand dieser Datenschutzerklärung: Januar 2025
               </p>
               <p className="text-sm text-gray-600 mt-2">
-                Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten kontaktieren Sie uns gerne unter: <a href="mailto:matthias.frank@deinvergleich.net" className="text-indigo-600 hover:text-indigo-800">matthias.frank@deinvergleich.net</a>
+                Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten kontaktieren Sie uns gerne unter: <a href="mailto:matthias.frank@deinvergleich.com" className="text-indigo-600 hover:text-indigo-800">matthias.frank@deinvergleich.com</a>
               </p>
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function DatenschutzPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg font-semibold mb-4">deinvergleich.net</h3>
+              <h3 className="text-lg font-semibold mb-4">deinvergleich.com</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Einfach, schnell und kostenlos Angebote erhalten
               </p>
@@ -170,7 +170,7 @@ export default function DatenschutzPage() {
             <div>
               <h4 className="text-base font-semibold mb-4">Kontakt</h4>
               <div className="text-gray-300 text-sm space-y-2">
-                <p>E-Mail: matthias.frank@deinvergleich.net</p>
+                <p>E-Mail: matthias.frank@deinvergleich.com</p>
                 <p>Mo-Fr: 9:00 - 18:00 Uhr</p>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function DatenschutzPage() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2025 deinvergleich.net. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 deinvergleich.com. Alle Rechte vorbehalten.</p>
           </div>
         </div>
       </footer>

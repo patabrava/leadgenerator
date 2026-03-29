@@ -95,7 +95,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg font-semibold mb-4">deinvergleich.net</h3>
+              <h3 className="text-lg font-semibold mb-4">deinvergleich.com</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Einfach, schnell und kostenlos Angebote erhalten
 
@@ -106,7 +106,7 @@ export default function HomePage() {
               <div className="text-gray-300 text-sm space-y-2">
                 <p>Adresse: Hagenauer Str. 16, 10435 Berlin</p>
             
-                <p>E-Mail: matthias.frank@deinvergleich.net</p>
+                <p>E-Mail: matthias.frank@deinvergleich.com</p>
                 
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2025 deinvergleich.net. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 deinvergleich.com. Alle Rechte vorbehalten.</p>
           </div>
         </div>
       </footer>
