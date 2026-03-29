@@ -162,7 +162,7 @@ export function StepReview() {
       </div>
 
       {/* What happens next */}
-      <div className="bg-primary-light border border-primary/20 rounded-lg p-4">
+      <div className="bg-primary-bg border border-primary/20 rounded-lg p-4">
         <div className="flex">
           <div className="flex-shrink-0">
             <svg
@@ -182,7 +182,7 @@ export function StepReview() {
             <h3 className="text-sm font-medium text-primary">
               Was passiert als Nächstes?
             </h3>
-            <div className="mt-2 text-sm text-primary/80">
+            <div className="mt-2 text-sm text-primary/70">
               <ol className="list-decimal list-inside space-y-1">
                 <li>Wir erhalten Ihre Anfrage und prüfen Ihren Bedarf</li>
                 <li>Ein Experte meldet sich innerhalb von 24 Stunden bei Ihnen</li>
