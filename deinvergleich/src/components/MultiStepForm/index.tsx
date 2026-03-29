@@ -20,109 +20,104 @@ export function MultiStepForm({ children }: MultiStepFormProps) {
 
   return (
     <div className="w-full">
-      <div className="w-full max-w-4xl mx-auto">
-        <form
-          onSubmit={async (e) => {
-            e.preventDefault();
-            await handleNext();
-          }}
-          aria-label="Vergleichsanfrage"
-          noValidate
-        >
-          {/* Main form container */}
-          <div className="bg-card rounded-lg sm:rounded-xl shadow-lg overflow-hidden border border-border">
-            {/* Progress bar */}
-            <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 bg-secondary border-b border-border">
-              <ProgressBar
-                currentStep={state.currentStep}
-                totalSteps={4}
-                onStepClick={(step) => goToStep(step as 0 | 1 | 2 | 3)}
-              />
+      <form
+        onSubmit={async (e) => {
+          e.preventDefault();
+          await handleNext();
+        }}
+        aria-label="Vergleichsanfrage"
+        noValidate
+      >
+        {/* Form card — white, rounded top */}
+        <div className="bg-card rounded-t-xl shadow-2xl overflow-hidden">
+          {/* Form title + progress */}
+          <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-border">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-sm font-semibold text-card-foreground font-body">
+                Kostenlos Angebote erhalten
+              </span>
+              <span className="text-xs font-medium text-primary font-body">
+                {state.currentStep + 1} / 4
+              </span>
             </div>
-
-            {/* Form content */}
-            <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
-              {/* Validation error announcements */}
-              <div aria-live="assertive" className="sr-only">
-                {Object.values(state.errors).filter(Boolean).length > 0 && (
-                  <p>
-                    Es gibt {Object.values(state.errors).filter(Boolean).length} Fehler im Formular.
-                    Bitte korrigieren Sie die markierten Felder.
-                  </p>
-                )}
-              </div>
-
-              <div className="slide-in">
-                {children}
-              </div>
-            </div>
-
-            {/* Navigation buttons */}
-            <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 bg-secondary border-t border-border">
-              <NavigationButtons
-                currentStep={state.currentStep}
-                canProceed={canProceed()}
-                isSubmitting={state.isSubmitting}
-                onPrev={() => prevStep()}
-              />
-            </div>
+            <ProgressBar
+              currentStep={state.currentStep}
+              totalSteps={4}
+              onStepClick={(step) => goToStep(step as 0 | 1 | 2 | 3)}
+            />
           </div>
-        </form>
 
-        {/* Success message */}
-        {state.isCompleted && (
-          <div role="alert" className="mt-6 sm:mt-8 bg-success-light border border-success-border rounded-lg p-4 sm:p-6">
-            <div className="flex items-start sm:items-center">
-              <div className="flex-shrink-0">
-                <svg
-                  className="h-5 w-5 text-success mt-0.5 sm:mt-0"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <div className="ml-3">
-                <p className="text-sm sm:text-base font-medium text-success leading-relaxed font-body">
-                  Vielen Dank für Ihre Anfrage! Wir melden uns in Kürze bei Ihnen.
+          {/* Form content */}
+          <div className="px-4 sm:px-6 py-5 sm:py-6">
+            {/* Validation error announcements */}
+            <div aria-live="assertive" className="sr-only">
+              {Object.values(state.errors).filter(Boolean).length > 0 && (
+                <p>
+                  Es gibt {Object.values(state.errors).filter(Boolean).length} Fehler im Formular.
+                  Bitte korrigieren Sie die markierten Felder.
                 </p>
-              </div>
+              )}
             </div>
-          </div>
-        )}
 
-        {/* Submission error message */}
-        {state.submitError && (
-          <div role="alert" className="mt-6 sm:mt-8 bg-destructive/10 border border-destructive/20 rounded-lg p-4 sm:p-6">
-            <div className="flex items-start sm:items-center">
-              <div className="flex-shrink-0">
-                <svg
-                  className="h-5 w-5 text-destructive mt-0.5 sm:mt-0"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <div className="ml-3">
-                <p className="text-sm sm:text-base font-medium text-destructive leading-relaxed font-body">
-                  {state.submitError}
-                </p>
-              </div>
+            <div className="slide-in">
+              {children}
             </div>
           </div>
-        )}
-      </div>
+
+          {/* Navigation buttons */}
+          <div className="px-4 sm:px-6 py-4 bg-primary-bg/50 border-t border-border">
+            <NavigationButtons
+              currentStep={state.currentStep}
+              canProceed={canProceed()}
+              isSubmitting={state.isSubmitting}
+              onPrev={() => prevStep()}
+            />
+          </div>
+        </div>
+
+        {/* Expert strip — attached below, rounded bottom */}
+        <div className="bg-card/95 rounded-b-xl px-4 sm:px-6 py-4 border-t border-border">
+          <div className="flex gap-3 items-center mb-3">
+            <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-xs font-bold font-body flex-shrink-0">
+              MF
+            </div>
+            <div>
+              <div className="text-sm font-semibold text-card-foreground font-body">Matthias Frank</div>
+              <div className="text-xs text-muted-foreground font-body">Zert. DSB (TÜV) · ISO 27001 · 10+ J. Erfahrung</div>
+            </div>
+          </div>
+          <div className="text-sm text-secondary-foreground italic border-l-2 border-primary pl-3 font-body leading-relaxed">
+            &ldquo;Schnell den perfekten Anbieter gefunden.&rdquo;
+            <span className="not-italic text-xs text-muted-foreground ml-1">— A. Kaijo, GF</span>
+          </div>
+        </div>
+      </form>
+
+      {/* Success message */}
+      {state.isCompleted && (
+        <div role="alert" className="mt-4 bg-success-light border border-success-border rounded-lg p-4">
+          <div className="flex items-center gap-3">
+            <svg className="h-5 w-5 text-success flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <p className="text-sm font-medium text-success font-body">
+              Vielen Dank für Ihre Anfrage! Wir melden uns in Kürze bei Ihnen.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Submission error */}
+      {state.submitError && (
+        <div role="alert" className="mt-4 bg-destructive/10 border border-destructive/20 rounded-lg p-4">
+          <div className="flex items-center gap-3">
+            <svg className="h-5 w-5 text-destructive flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+            </svg>
+            <p className="text-sm font-medium text-destructive font-body">{state.submitError}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -145,65 +140,44 @@ function NavigationButtons({
 
   return (
     <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-4">
-      {/* Previous button */}
       <button
         type="button"
         onClick={onPrev}
         disabled={isFirstStep || isSubmitting}
         className={`w-full sm:w-auto inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-2 border border-border text-sm font-medium font-body rounded-md transition-colors duration-200 ${
           isFirstStep || isSubmitting
-            ? 'text-muted-foreground/50 cursor-not-allowed bg-secondary'
-            : 'text-foreground bg-card hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring'
+            ? 'text-muted-foreground/50 cursor-not-allowed bg-primary-bg/30'
+            : 'text-foreground bg-card hover:bg-primary-bg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring'
         }`}
       >
-        <svg
-          className="w-4 h-4 mr-2"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
+        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
         <span className="sm:hidden">Zurück</span>
         <span className="hidden sm:inline">Vorheriger Schritt</span>
       </button>
 
-      {/* Next / Submit button */}
       <button
         type="submit"
         disabled={!canProceed || isSubmitting}
-        className={`w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-2 border border-transparent text-sm font-medium font-body rounded-md text-primary-foreground transition-colors duration-200 min-w-0 sm:min-w-[120px] ${
+        className={`w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-2 border border-transparent text-sm font-medium font-body rounded-md text-accent-foreground transition-colors duration-200 min-w-0 sm:min-w-[120px] ${
           !canProceed || isSubmitting
             ? 'bg-muted-foreground/40 cursor-not-allowed'
-            : 'bg-primary hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring shadow-sm'
+            : 'bg-accent hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring shadow-sm'
         }`}
       >
         {isSubmitting && (
           <div className="mr-2 flex space-x-1">
-            <div className="w-2 h-2 bg-primary-foreground rounded-full loading-dot" />
-            <div className="w-2 h-2 bg-primary-foreground rounded-full loading-dot" />
-            <div className="w-2 h-2 bg-primary-foreground rounded-full loading-dot" />
+            <div className="w-2 h-2 bg-accent-foreground rounded-full loading-dot" />
+            <div className="w-2 h-2 bg-accent-foreground rounded-full loading-dot" />
+            <div className="w-2 h-2 bg-accent-foreground rounded-full loading-dot" />
           </div>
         )}
-
         <span className="truncate">
-          {isSubmitting
-            ? 'Wird gesendet...'
-            : isLastStep
-            ? 'Jetzt Angebote erhalten'
-            : 'Weiter'
-          }
+          {isSubmitting ? 'Wird gesendet...' : isLastStep ? 'Jetzt Angebote erhalten' : 'Weiter'}
         </span>
-
         {!isSubmitting && !isLastStep && (
-          <svg
-            className="w-4 h-4 ml-2 flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg className="w-4 h-4 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         )}
