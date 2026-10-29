@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>deinvergleich.eu – Datenschutz-Anbieter vergleichen</title>
+  <meta name="description" content="Kostenloser Vergleich qualifizierter DSGVO-Anbieter. Finden Sie den passenden Datenschutz-Experten für Ihr Unternehmen.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="deinvergleich.eu – Datenschutz-Anbieter vergleichen">
+  <meta property="og:description" content="Vergleichen Sie Datenschutz-Anbieter für Ihr Unternehmen.">
+  <meta property="og:url" content="https://www.deinvergleich.eu/">
+  <link rel="canonical" href="https://www.deinvergleich.eu/">
+  <meta name="theme-color" content="#0C2D3A">
+  <link rel="stylesheet" href="/landing/fonts.css">
+  <link rel="stylesheet" href="/landing/styles.css">
+  <script src="/landing/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="deinvergleich.eu – zum Seitenanfang">
+        <span class="brand-word">deinvergleich<span class="brand-tld">.eu</span></span>
+        <span class="brand-desc">Datenschutz-Vergleichsportal</span>
+      </a>
+      <nav class="header-nav" aria-label="Seitenbereiche">
+        <a href="#ablauf">Ablauf</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn btn-primary header-cta" href="#anfrage" data-start-form>Angebote erhalten</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <h1 class="hero-title" id="hero-title">Finden Sie den perfekten Datenschutz-Experten</h1>
+
+        <p class="hero-lead">Vergleich von DSGVO-Anbietern in Deutschland. Erhalten Sie in wenigen Minuten passende Angebote für Ihr Unternehmen.</p>
+
+        <ul class="facts">
+          <li class="fact"><span class="fact-value">0&nbsp;€</span> <span class="fact-label">Kosten für Sie, unverbindlich</span></li>
+          <li class="fact"><span class="fact-value">DE</span> <span class="fact-label">Für Unternehmen in Deutschland</span></li>
+          <li class="fact"><span class="fact-value">2&nbsp;Min.</span> <span class="fact-label">für Ihre Anfrage</span></li>
+        </ul>
+
+
+
+        <div class="hero-form" id="anfrage">
+          <div class="form-card">
+            <form class="lead-form" id="lead-form" novalidate aria-labelledby="form-title">
+              <div class="form-head">
+                <div class="form-head-row">
+                  <h2 class="form-title" id="form-title">Kostenlos Angebote erhalten</h2>
+                  <p class="form-count">Schritt <span data-step-num>1</span> von 4</p>
+                </div>
+                <ol class="rail" aria-label="Fortschritt der Anfrage">
+                  <li class="rail-stop is-current" aria-current="step"><span class="rail-hit"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">Unternehmen</span></span></li>
+                  <li class="rail-stop is-todo"><span class="rail-hit"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">Kontakt</span></span></li>
+                  <li class="rail-stop is-todo"><span class="rail-hit"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">Projekt</span></span></li>
+                  <li class="rail-stop is-todo"><span class="rail-hit"><span class="rail-dot" aria-hidden="true"></span><span class="rail-label">Prüfen</span></span></li>
+                </ol>
+              </div>
+
+              <div class="form-body">
+                <p class="sr-only" aria-live="polite" data-status></p>
+
+                <!-- Step 1 · Unternehmensdaten -->
+                <section class="step" data-step="0" aria-labelledby="s0-title">
+                  <h3 class="step-title" id="s0-title" tabindex="-1">Unternehmensdaten</h3>
+                  <p class="step-intro">Bitte geben Sie die grundlegenden Informationen zu Ihrem Unternehmen ein.</p>
+                  <div class="fields">
+                    <div class="field" data-field="unternehmen">
+                      <label class="label" for="unternehmen">Firmenname</label>
+                      <input class="input" id="unternehmen" name="unternehmen" type="text" autocomplete="organization" placeholder="Ihre Firma GmbH" maxlength="100" required>
+                      <p class="field-error" id="unternehmen-error" hidden></p>
+                    </div>
+                    <div class="field-row">
+                      <div class="field">
+                        <span class="label">Land</span>
+                        <p class="input country-value">Deutschland</p>
+                        <input type="hidden" name="land" value="DE">
+                      </div>
+                      <div class="field" data-field="plz">
+                        <label class="label" for="plz">Postleitzahl</label>
+                        <input class="input input-num" id="plz" name="plz" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="12345" maxlength="5" required>
+                        <p class="field-error" id="plz-error" hidden></p>
+                      </div>
+                    </div>
+                    <p class="hint" id="land-hint">Der Vergleich richtet sich an Unternehmen in Deutschland.</p>
+                  </div>
+                </section>
+
+                <!-- Step 2 · Kontaktdaten -->
+                <section class="step" data-step="1" aria-labelledby="s1-title" hidden>
+                  <h3 class="step-title" id="s1-title" tabindex="-1">Kontaktdaten</h3>
+                  <p class="step-intro">Wie können wir Sie am besten erreichen? Ihre Daten werden vertraulich behandelt.</p>
+                  <div class="fields">
+                    <div class="field" data-field="name">
+                      <label class="label" for="name">Ihr Name</label>
+                      <input class="input" id="name" name="name" type="text" autocomplete="name" placeholder="Max Mustermann" maxlength="50" required>
+                      <p class="field-error" id="name-error" hidden></p>
+                    </div>
+                    <div class="field" data-field="telefonnummer">
+                      <label class="label" for="telefonnummer">Telefonnummer</label>
+                      <input class="input" id="telefonnummer" name="telefonnummer" type="tel" autocomplete="tel" placeholder="+49 123 456789" aria-describedby="telefonnummer-hint" required>
+                      <p class="field-error" id="telefonnummer-error" hidden></p>
+                      <p class="hint" id="telefonnummer-hint">Beispiel: +49 123 456789 oder 0123 456789</p>
+                    </div>
+                    <div class="field" data-field="emailadresse">
+                      <label class="label" for="emailadresse">E-Mail-Adresse</label>
+                      <input class="input" id="emailadresse" name="emailadresse" type="email" autocomplete="email" placeholder="max.mustermann@firma.de" required>
+                      <p class="field-error" id="emailadresse-error" hidden></p>
+                    </div>
+                  </div>
+                  <p class="note">
+                    <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.2 3.6 4.6v4.6c0 4 2.7 7.2 6.4 8.6 3.7-1.4 6.4-4.6 6.4-8.6V4.6Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m7.2 10.1 2 2 3.8-3.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span><strong>Datenschutz garantiert:</strong> Ihre Anfrage und Kontaktdaten können zur Angebotserstellung an Partner und gegebenenfalls Vermittler weitergegeben werden. Näheres steht in unserer Datenschutzerklärung.</span>
+                  </p>
+                </section>
+
+                <!-- Step 3 · Projektdetails -->
+                <section class="step" data-step="2" aria-labelledby="s2-title" hidden>
+                  <h3 class="step-title" id="s2-title" tabindex="-1">Projektdetails</h3>
+                  <p class="step-intro">Helfen Sie uns, Ihren spezifischen Bedarf zu verstehen.</p>
+                  <div class="fields">
+                    <fieldset class="field fieldset" data-field="dsbVorhanden">
+                      <legend class="label">Haben Sie bereits einen externen Datenschutzbeauftragten (DSB)?</legend>
+                      <div class="choice-list">
+                        <label class="choice"><input type="radio" name="dsbVorhanden" value="ja"><span class="choice-text">Ja, wir haben bereits einen externen DSB</span></label>
+                        <label class="choice"><input type="radio" name="dsbVorhanden" value="nein"><span class="choice-text">Nein, wir benötigen einen externen DSB</span></label>
+                        <label class="choice"><input type="radio" name="dsbVorhanden" value="unsicher"><span class="choice-text">Ich bin mir nicht sicher</span></label>
+                      </div>
+                      <p class="field-error" id="dsbVorhanden-error" hidden></p>
+                    </fieldset>
+                    <div class="field" data-field="start">
+                      <label class="label" for="start">Gewünschter Starttermin</label>
+                      <input class="input input-date" id="start" name="start" type="date" aria-describedby="start-hint" required>
+                      <p class="field-error" id="start-error" hidden></p>
+                      <p class="hint" id="start-hint">Wann soll die Betreuung beginnen?</p>
+                    </div>
+                    <fieldset class="field fieldset" data-field="unternehmensgroesse" aria-describedby="groesse-hint">
+                      <legend class="label">Unternehmensgröße</legend>
+                      <p class="hint hint-top" id="groesse-hint">Anzahl Mitarbeiter. Die Unternehmensgröße hilft uns bei der passenden Beratung.</p>
+                      <div class="chips">
+                        <label class="chip"><input type="radio" name="unternehmensgroesse" value="1-10"><span>1–10<span class="sr-only"> Mitarbeiter</span></span></label>
+                        <label class="chip"><input type="radio" name="unternehmensgroesse" value="11-50"><span>11–50<span class="sr-only"> Mitarbeiter</span></span></label>
+                        <label class="chip"><input type="radio" name="unternehmensgroesse" value="51-250"><span>51–250<span class="sr-only"> Mitarbeiter</span></span></label>
+                        <label class="chip"><input type="radio" name="unternehmensgroesse" value="251-500"><span>251–500<span class="sr-only"> Mitarbeiter</span></span></label>
+                        <label class="chip"><input type="radio" name="unternehmensgroesse" value="500+"><span>500+<span class="sr-only"> Mitarbeiter</span></span></label>
+                      </div>
+                      <p class="field-error" id="unternehmensgroesse-error" hidden></p>
+                    </fieldset>
+                  </div>
+                </section>
+
+                <!-- Step 4 · Zusammenfassung -->
+                <section class="step" data-step="3" aria-labelledby="s3-title" hidden>
+                  <h3 class="step-title" id="s3-title" tabindex="-1">Zusammenfassung</h3>
+                  <p class="step-intro">Bitte überprüfen Sie Ihre Angaben vor dem Absenden.</p>
+                  <div class="summary">
+                    <div class="summary-group">
+                      <div class="summary-head">
+                        <h4>Unternehmen</h4>
+                        <button class="summary-edit" type="button" data-edit="0">Ändern<span class="sr-only"> – Unternehmensdaten</span></button>
+                      </div>
+                      <dl>
+                        <dt>Firmenname</dt><dd data-summary="unternehmen">—</dd>
+                        <dt>PLZ, Land</dt><dd><span data-summary="plz">—</span>, <span data-summary="land">—</span></dd>
+                      </dl>
+                    </div>
+                    <div class="summary-group">
+                      <div class="summary-head">
+                        <h4>Kontakt</h4>
+                        <button class="summary-edit" type="button" data-edit="1">Ändern<span class="sr-only"> – Kontaktdaten</span></button>
+                      </div>
+                      <dl>
+                        <dt>Name</dt><dd data-summary="name">—</dd>
+                        <dt>Telefon</dt><dd data-summary="telefonnummer">—</dd>
+                        <dt>E-Mail</dt><dd data-summary="emailadresse">—</dd>
+                      </dl>
+                    </div>
+                    <div class="summary-group">
+                      <div class="summary-head">
+                        <h4>Projekt</h4>
+                        <button class="summary-edit" type="button" data-edit="2">Ändern<span class="sr-only"> – Projektdetails</span></button>
+                      </div>
+                      <dl>
+                        <dt>Externer DSB</dt><dd data-summary="dsbVorhanden">—</dd>
+                        <dt>Starttermin</dt><dd data-summary="start">—</dd>
+                        <dt>Größe</dt><dd data-summary="unternehmensgroesse">—</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="field" data-field="gdprConsent">
+                    <label class="consent">
+                      <input type="checkbox" id="gdprConsent" name="gdprConsent" required>
+                      <span class="consent-text">Ich stimme der Verarbeitung meiner personenbezogenen Daten gemäß der <a href="https://www.deinvergleich.eu/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklärung<span class="sr-only"> (öffnet in neuem Tab)</span></a> zu. Einzelheiten zur Verarbeitung und zu Ihren Rechten finden Sie dort.</span>
+                    </label>
+                    <p class="field-error" id="gdprConsent-error" hidden></p>
+                  </div>
+                  <p class="reassure">Wir melden uns zu Ihrer Anfrage bei Ihnen.</p>
+                </section>
+              </div>
+
+              <div class="form-alert" role="alert" data-submit-error hidden>
+                <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="10" cy="13.6" r="1" fill="currentColor"/></svg>
+                <span>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</span>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn-quiet" type="button" data-back hidden>
+                  <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Zurück
+                </button>
+                <button class="btn btn-primary btn-lg" type="submit" data-next>
+                  <span data-next-label>Weiter</span>
+                  <svg class="icon" data-next-icon viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <p class="form-privacy" data-privacy>
+                <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="8.6" width="11" height="8.4" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.6V6.4a3 3 0 0 1 6 0v2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                Ihre Angaben werden vertraulich und DSGVO-konform verarbeitet.
+              </p>
+            </form>
+
+            <div class="form-success" data-success tabindex="-1" aria-labelledby="success-title" hidden>
+              <span class="success-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 20 20"><path d="m5 10.4 3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3 class="success-title" id="success-title">Vielen Dank für Ihre Anfrage!</h3>
+              <p>Wir melden uns in Kürze bei Ihnen.</p>
+              <h4 class="next-title">Was passiert als Nächstes?</h4>
+              <ol class="route-v">
+                <li class="is-done">Wir erhalten Ihre Anfrage und prüfen Ihren Bedarf</li>
+                <li>Wir melden uns zu Ihrer Anfrage bei Ihnen</li>
+                
+                <li>Unverbindliches Angebot für Ihre DSGVO-Betreuung</li>
+              </ol>
+              
+            </div>
+
+            <div class="form-expert">
+              <span class="avatar" aria-hidden="true">MF</span>
+              <p>
+                <span class="expert-name">Matthias Frank</span>
+                <span class="expert-cred">Zert. DSB (TÜV) · ISO&nbsp;27001 · 10+ J. Erfahrung</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reference band. The logos are marked placeholders: replace each <li> with the approved logo
+         (<img src="…" alt="Firmenname" height="28">) once the company has agreed to be named. -->
+    <section class="refs" aria-label="Referenzen" data-refs>
+      <div class="wrap refs-inner">
+        <div class="refs-viewport">
+          <div class="refs-track">
+            <ul class="refs-list">
+              <li class="ref"><img src="/landing/logos/lippelift.svg" alt="LIPPE Lift"></li>
+              <li class="ref"><img src="/landing/logos/degura.svg" alt="Degura"></li>
+              <li class="ref"><img src="/landing/logos/encory.svg" alt="encory"></li>
+              <li class="ref"><span class="creador-wordmark">CREADOR</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ablauf" aria-labelledby="ablauf-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="ablauf-title">So funktioniert’s</h2>
+          <p>In drei einfachen Schritten zum passenden Datenschutz-Anbieter.</p>
+        </header>
+        <ol class="route">
+          <li class="route-stop">
+            <p class="route-time">2&nbsp;Min.</p>
+            <div class="route-mark"><span class="route-dot" aria-hidden="true">1</span></div>
+            <h3>Anfrage stellen</h3>
+            <p>Formular ausfüllen – dauert nur 2&nbsp;Minuten.</p>
+          </li>
+          <li class="route-stop">
+            <p class="route-time">Nächster Schritt</p>
+            <div class="route-mark"><span class="route-dot" aria-hidden="true">2</span></div>
+            <h3>Angebote erhalten</h3>
+            <p>Ihre Anfrage wird bearbeitet.</p>
+          </li>
+          <li class="route-stop">
+            <p class="route-time">Ihre Wahl</p>
+            <div class="route-mark"><span class="route-dot" aria-hidden="true">3</span></div>
+            <h3>Anbieter wählen</h3>
+            <p>Vergleichen Sie Angebote und wählen Sie einen Anbieter für Ihr Unternehmen.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-canvas" id="vorteile" aria-labelledby="vorteile-title">
+      <div class="wrap split">
+        <header class="split-head">
+          <h2 id="vorteile-title">Warum deinvergleich.eu?</h2>
+          <p>Vergleichen Sie Angebote für die Datenschutzbetreuung Ihres Unternehmens.</p>
+          <a class="link-arrow" href="#anfrage" data-start-form>Anfrage starten
+            <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </header>
+        <ul class="benefits">
+          <li class="benefit">
+            <h3>Datenschutz-Anbieter vergleichen</h3>
+            <p>Finden Sie Unterstützung für die Datenschutzbetreuung Ihres Unternehmens.</p>
+          </li>
+          <li class="benefit">
+            <h3>Passend zu Ihrem Bedarf</h3>
+            <p>Ihre Anfrage beschreibt Ihren Bedarf und Ihre Unternehmensgröße.</p>
+          </li>
+          <li class="benefit">
+            <h3>Ihre Entscheidung</h3>
+            <p>Vergleichen Sie die Angebote und wählen Sie selbst.</p>
+          </li>
+          <li class="benefit">
+            <h3>Kostenloser Vergleich</h3>
+            <p>Unser Service ist für Sie vollständig kostenlos und unverbindlich.</p>
+          </li>
+          <li class="benefit">
+            <h3>Anfrage stellen</h3>
+            <p>Anfrage stellen und Angebote vergleichen.</p>
+          </li>
+          <li class="benefit">
+            <h3>Für alle Unternehmensgrößen</h3>
+            <p>Von Start-ups bis Konzerne – wir finden den passenden Anbieter.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-canvas" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-layout">
+        <header class="section-head"><h2 id="faq-title">Häufige Fragen</h2><p>Antworten rund um Datenschutz und den Vergleich.</p></header>
+        <div class="faq-list">
+          <details><summary>Brauche ich einen Datenschutzbeauftragten?</summary><div><p>Ob eine Benennung erforderlich ist, hängt unter anderem von Ihrer Verarbeitung personenbezogener Daten ab. Lassen Sie Ihre Situation fachlich prüfen.</p></div></details>
+          <details><summary>Was kostet ein externer Datenschutzbeauftragter?</summary><div><p>Die Kosten hängen vom Bedarf und Umfang der Betreuung ab.</p></div></details>
+          <details><summary>Interner oder externer Datenschutzbeauftragter: Was ist der Unterschied?</summary><div><p>Ein interner Datenschutzbeauftragter gehört dem Unternehmen an; ein externer wird von außerhalb bestellt. Welche Lösung passt, hängt unter anderem von Fachkunde, Unabhängigkeit und Bedarf ab.</p></div></details>
+          <details><summary>Was passiert mit meinen Daten?</summary><div><p>Laut Datenschutzerklärung werden Anfragen und Kontaktdaten zur Angebotserstellung an Partner und gegebenenfalls Vermittler weitergegeben. Weitere Informationen finden Sie in der <a href="https://www.deinvergleich.eu/datenschutz">Datenschutzerklärung</a>.</p></div></details>
+          <details><summary>Kann ich meine Anfrage zurückziehen?</summary><div><p>Für Fragen zu Ihrer Anfrage wenden Sie sich bitte an <a href="mailto:matthias.frank@deinvergleich.com">matthias.frank@deinvergleich.com</a>.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="wrap cta-inner">
+        <div>
+          <h2 id="cta-title">Bereit für den Vergleich?</h2>
+          <p>Kostenlos, unverbindlich, in 2&nbsp;Minuten.</p>
+        </div>
+        <a class="btn btn-on-ink btn-lg" href="#anfrage" data-start-form>Jetzt kostenlos vergleichen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="kontakt">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="brand-word">deinvergleich<span class="brand-tld">.eu</span></p>
+        <p class="footer-tag">Einfach, schnell und kostenlos Angebote erhalten</p>
+      </div>
+      <div>
+        <h2 class="footer-h">Kontakt</h2>
+        <address>Hagenauer Str. 16, 10435 Berlin<br><a href="mailto:matthias.frank@deinvergleich.com">matthias.frank@deinvergleich.com</a></address>
+      </div>
+      <nav aria-label="Rechtliche Informationen">
+        <h2 class="footer-h">Rechtliches</h2>
+        <ul class="footer-links">
+          <li><a href="https://www.deinvergleich.eu/impressum">Impressum</a></li>
+          <li><a href="https://www.deinvergleich.eu/datenschutz">Datenschutzerklärung</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap footer-base">
+      <p>© 2026 deinvergleich.eu. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+</body>
+</html>
