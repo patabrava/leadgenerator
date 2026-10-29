@@ -13,7 +13,7 @@ export function Header() {
             </div>
             <div>
               <span className="text-xl md:text-2xl font-bold text-card font-display block">
-                deinvergleich.com
+                deinvergleich.eu
               </span>
               <span className="text-sm text-primary-tint font-medium hidden sm:block font-body">
                 Datenschutz-Vergleichsportal

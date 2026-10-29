@@ -5,7 +5,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="text-lg font-semibold text-card mb-4 font-display">
-              deinvergleich.com
+              deinvergleich.eu
             </div>
             <p className="text-card/60 text-sm leading-relaxed font-body">
               Einfach, schnell und kostenlos Angebote erhalten
@@ -31,7 +31,7 @@ export function Footer() {
           </nav>
         </div>
         <div className="border-t border-card/10 mt-8 pt-8 text-center text-card/40 text-sm font-body">
-          <p>&copy; {new Date().getFullYear()} deinvergleich.com. Alle Rechte vorbehalten.</p>
+          <p>&copy; {new Date().getFullYear()} deinvergleich.eu. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>

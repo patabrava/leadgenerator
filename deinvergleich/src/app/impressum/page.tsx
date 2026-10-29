@@ -18,7 +18,7 @@ export default function ImpressumPage() {
                 Angaben gemäß § 5 TMG
               </h2>
               <div className="text-secondary-foreground space-y-2 font-body">
-                <p><strong>Betreiber:</strong> deinvergleich.com</p>
+                <p><strong>Betreiber:</strong> deinvergleich.eu</p>
                 <p><strong>E-Mail:</strong> matthias.frank@deinvergleich.com</p>
               </div>
             </div>

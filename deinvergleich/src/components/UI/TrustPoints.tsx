@@ -83,7 +83,7 @@ export function TrustPoints() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10 lg:mb-14">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground font-display mb-3">
-              Warum deinvergleich.com?
+              Warum deinvergleich.eu?
             </h2>
             <p className="text-muted-foreground font-body">
               Wir verbinden Sie mit zertifizierten Datenschutz-Experten — kostenlos und unverbindlich.
@@ -119,7 +119,7 @@ export function TrustPoints() {
           <div className="border-l-4 border-primary pl-6 lg:pl-8 max-w-3xl">
             <blockquote>
               <p className="text-lg lg:text-xl text-foreground font-display italic leading-relaxed">
-                &ldquo;Dank deinvergleich.com haben wir schnell den perfekten Datenschutz-Anbieter
+                &ldquo;Dank deinvergleich.eu haben wir schnell den perfekten Datenschutz-Anbieter
                 gefunden. Kostenlos, unkompliziert und sehr professionell. Wir können den Service
                 jedem Unternehmen empfehlen.&rdquo;
               </p>

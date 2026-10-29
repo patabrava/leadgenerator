@@ -17,37 +17,38 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "deinvergleich.com - Datenschutz-Anbieter Vergleich",
+  metadataBase: new URL("https://www.deinvergleich.eu"),
+  title: "deinvergleich.eu - Datenschutz-Anbieter Vergleich",
   description: "Deutschlands führendes Vergleichsportal für Datenschutz-Dienstleister. Finden Sie kostenlos den passenden DSGVO-Experten für Ihr Unternehmen.",
   keywords: "DSGVO Vergleich, Datenschutz Anbieter, Datenschutzbeauftragter finden, DSB Vergleich, Datenschutz Portal, DSGVO Beratung",
-  authors: [{ name: "deinvergleich.com" }],
-  creator: "deinvergleich.com",
-  publisher: "deinvergleich.com",
+  authors: [{ name: "deinvergleich.eu" }],
+  creator: "deinvergleich.eu",
+  publisher: "deinvergleich.eu",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://deinvergleich.com",
-    siteName: "deinvergleich.com",
-    title: "deinvergleich.com - Datenschutz-Anbieter Vergleich",
+    url: "https://www.deinvergleich.eu",
+    siteName: "deinvergleich.eu",
+    title: "deinvergleich.eu - Datenschutz-Anbieter Vergleich",
     description: "Deutschlands führendes Vergleichsportal für Datenschutz-Dienstleister. Finden Sie kostenlos den passenden DSGVO-Experten für Ihr Unternehmen.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "deinvergleich.com - DSGVO-Experte",
+        alt: "deinvergleich.eu - DSGVO-Experte",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "deinvergleich.com - Datenschutz-Anbieter Vergleich",
+    title: "deinvergleich.eu - Datenschutz-Anbieter Vergleich",
     description: "Deutschlands führendes Vergleichsportal für Datenschutz-Dienstleister. Finden Sie kostenlos den passenden DSGVO-Experten für Ihr Unternehmen.",
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://deinvergleich.com",
+    canonical: "https://www.deinvergleich.eu",
   },
   other: {
     "theme-color": "#0f766e",
