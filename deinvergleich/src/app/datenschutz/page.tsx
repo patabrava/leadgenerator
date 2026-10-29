@@ -125,7 +125,7 @@ export default function DatenschutzPage() {
 
               <h3 className="text-xl font-semibold text-foreground mb-3 mt-6 font-display">c) Kontaktadresse für Ausübung Ihrer Rechte</h3>
               <p>
-                Jegliche Ersuchen zu Ihren personenbezogenen Daten richten Sie bitte an: <a href="mailto:matthias.frank@deinvergleich.com" className="text-primary hover:text-primary/80">matthias.frank@deinvergleich.com</a>
+                Jegliche Ersuchen zu Ihren personenbezogenen Daten richten Sie bitte an: <a href="mailto:matthias@supportdeinvergleich.de" className="text-primary hover:text-primary/80">matthias@supportdeinvergleich.de</a>
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3 mt-6 font-display">d) Beschwerderecht bei der Aufsichtsbehörde</h3>
@@ -149,7 +149,7 @@ export default function DatenschutzPage() {
                 Stand dieser Datenschutzerklärung: Januar 2025
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten kontaktieren Sie uns gerne unter: <a href="mailto:matthias.frank@deinvergleich.com" className="text-primary hover:text-primary/80">matthias.frank@deinvergleich.com</a>
+                Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten kontaktieren Sie uns gerne unter: <a href="mailto:matthias@supportdeinvergleich.de" className="text-primary hover:text-primary/80">matthias@supportdeinvergleich.de</a>
               </p>
             </div>
           </div>

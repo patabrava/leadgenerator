@@ -15,7 +15,7 @@ export function Footer() {
             <div className="text-base font-semibold text-card mb-4 font-body">Kontakt</div>
             <address className="text-card/60 text-sm space-y-2 not-italic font-body">
               <p>Hagenauer Str. 16, 10435 Berlin</p>
-              <p>E-Mail: matthias.frank@deinvergleich.com</p>
+              <p>E-Mail: matthias@supportdeinvergleich.de</p>
             </address>
           </div>
           <nav aria-label="Rechtliche Informationen">

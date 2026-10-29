@@ -19,7 +19,7 @@ export default function ImpressumPage() {
               </h2>
               <div className="text-secondary-foreground space-y-2 font-body">
                 <p><strong>Betreiber:</strong> deinvergleich.eu</p>
-                <p><strong>E-Mail:</strong> matthias.frank@deinvergleich.com</p>
+                <p><strong>E-Mail:</strong> matthias@supportdeinvergleich.de</p>
               </div>
             </div>
 
